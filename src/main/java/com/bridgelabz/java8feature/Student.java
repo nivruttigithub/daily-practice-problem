@@ -1,4 +1,4 @@
-package java8feature;
+package com.bridgelabz.java8feature;
 
 public class Student {
     String name;

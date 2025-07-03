@@ -1,4 +1,4 @@
-package java8feature;
+package com.bridgelabz.java8feature;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -86,6 +86,7 @@ public class JavaEightFeatureImpl {
                 .collect(Collectors.groupingBy(Student::getDepartment,
                         Collectors.minBy(Comparator.comparingInt(Student::getRank))));
         System.out.println(highestRankPerDept);
+        System.out.println();
 
         //9. Student who has second rank
         Optional<Student> secondRanker = students
@@ -94,6 +95,7 @@ public class JavaEightFeatureImpl {
                 .skip(1)
                 .findFirst();
         System.out.println(secondRanker);
+        System.out.println();
 
         //String & Array Based Java 8 Problems
 
@@ -103,6 +105,7 @@ public class JavaEightFeatureImpl {
                 .mapToObj(c -> (char) c)
                 .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
         System.out.println(countMap);
+        System.out.println();
 
         // 2. Find duplicate characters
         Set<Character> duplicates = input.chars()
@@ -113,6 +116,7 @@ public class JavaEightFeatureImpl {
                 .map(Map.Entry::getKey)
                 .collect(Collectors.toSet());
         System.out.println(duplicates);
+        System.out.println();
 
         //3. First non-repeating character
         Optional<Character> firstNonRepeating = input.chars()
@@ -123,6 +127,7 @@ public class JavaEightFeatureImpl {
                 .map(Map.Entry::getKey)
                 .findFirst();
         System.out.println(firstNonRepeating);
+        System.out.println();
 
         //4. Second largest in array
         int[] arr = {4, 1, 7, 2, 9, 9};
@@ -134,18 +139,21 @@ public class JavaEightFeatureImpl {
                 .mapToInt(Integer::intValue)
                 .findFirst();
         System.out.println(secondLargest);
+        System.out.println();
 
         // 5. Longest string in a list
         List<String> list = Arrays.asList("apple", "banana", "pineapple");
         Optional<String> longest = list.stream()
                 .max(Comparator.comparingInt(String::length));
         System.out.println(list);
+        System.out.println();
 
         //6. Max number in array
         int max = Arrays.stream(arr)
                 .max()
                 .orElseThrow(() -> new NoSuchElementException("Array is empty"));
         System.out.println(max);
+        System.out.println();
 
         //7. Elements starting with 1
         List<Integer> numbers = Arrays.asList(10, 12, 23, 17, 45);
@@ -154,11 +162,13 @@ public class JavaEightFeatureImpl {
                 .filter(s -> s.startsWith("1"))
                 .collect(Collectors.toList());
         System.out.println(numbers);
+        System.out.println();
 
         //8. String.join example
         List<String> names = Arrays.asList("Amit", "Sumit", "Ravi");
         String joined = String.join(", ", names);
         System.out.println(names);
+        System.out.println();
 
         //9. skip() and limit() example
         List<Integer> resultList = numbers.stream()
@@ -166,6 +176,7 @@ public class JavaEightFeatureImpl {
                 .limit(3)     // takes next 3
                 .collect(Collectors.toList());
         System.out.println(resultList);
+        System.out.println();
 
 
 
